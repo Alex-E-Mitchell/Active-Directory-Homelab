@@ -53,6 +53,22 @@ Helpdesk users are able to:
 
 This was configured using the **Delegation of Control Wizard in Active Directory**. 
 
+## DHCP Configuration
+![alt text](DHCP-configuration.png)
+
+A DHCP server was deployed on the domain controller to provide automatic IP address assignment to domain clients. 
+
+DHCP Scop Configuration: 
+- IP Range: 10.0.2.100 - 10.0.2.200
+- Subnet Mask: 255.255.255.0
+- Default Gateway: 10.0.2.2
+- DNS Server: 10.0.2.15
+- Domain Name: homelab.local
+
+Servers within the environment (DCO1 and FS01) use static IP addresses, while client machines obtain network configuration automatically through DHCP.
+
+This configuration allows new client systems to automatically join the network and locate domain services without manual network configuration.
+
 ## Troubleshooting Experience
 During the setup of this environment, several common IT issues were diagnosed and resolved:
 - DNS configuration preventing domain joins
